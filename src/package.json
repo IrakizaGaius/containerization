@@ -1,0 +1,28 @@
+{
+  "name": "containerization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minify-html": "html-minifier-terser src/index.html --collapse-whitespace --output=dist/index.html",
+    "optimize-css": "postcss src/styles.css --use autoprefixer cssnano postcss-pxtorem --output dist/styles.css --no-map",
+    "transpile-js": "babel src/script.js -o dist/script.js --presets=@babel/preset-env",
+    "minify-js": "uglifyjs dist/script.js --compress -o dist/script.js",
+    "build": "npm run minify-html && npm run optimize-css && npm run transpile-js && npm run minify-js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "html-minifier-terser": "^7.2.0",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-pxtorem": "^6.1.0",
+    "uglify-js": "^3.17.4",
+    "express": "^4.19.2"
+}
+}
